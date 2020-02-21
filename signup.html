@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>SignUp</title>
+<link rel="stylesheet" type="text/css" href="css/SignUp.css">
+<body>
+	<header>
+	  	<nav>
+		    <div class="mainbody clearfix">
+		      <img src="images/image.jpg" class="logo">
+		      <ul class="c-menu" id="id-menu">
+		        <li><a href="login.html">Order Now</a></li>
+		        <li><a href="index.html">Home</a></li>
+		        <li><a href="gallery.html">Gallery</a></li>
+		        <li><a href="story.html">Story</a></li>
+		        <li><a href="visit.html">Visit</a></li>
+		      </ul>
+		    </div>
+	  	</nav>
+	</header>
+	<div class="signup">
+		<h1>SignUp</h1>
+		<form name="signup" action="signup.php" method="post">
+			&nbsp;Name &nbsp;<input type="text" required name="name" placeholder="Enter Name"><br>
+			&nbsp;Username &nbsp;<input type="email" required name="username" placeholder="Enter Username"><br> 
+			&nbsp;Password &nbsp;<input type="password" required name="password" placeholder="Enter Password"><br>
+			&nbsp;Mobile &nbsp;<input type="number" required name="mobile" placeholder="Enter mobile no"><br>
+			&nbsp;Address &nbsp;<input type="text" required name="address" placeholder="Enter Address"><br>
+			<div class="radio">
+				<label class="gender">
+					&nbsp;<input type="radio" name="gender" value="Male">Male &nbsp;
+				</label>
+				<label class="gender">
+					&nbsp;<input type="radio" name="gender" value="Female">Female &nbsp;
+				</label>
+			</div>
+			&nbsp;<input type="submit" name="login" value="Submit" >
+			
+		</form>
+	</div>
+</body>
+</head>
+</html

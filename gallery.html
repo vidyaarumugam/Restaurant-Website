@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>Gallery</title>
+</head>
+<style>
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+body{
+  font-size: 20px;
+  overflow-x: hidden;
+  color: #fff;
+  align-items: center;
+}
+header{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background:black;
+  height:20vh;
+  }
+
+.clearfix:after{
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0px;
+  clear: both;
+}
+.mainbody{
+  max-width:1180px;
+  margin:0 auto;
+}
+.logo{
+  height:70px;
+  width:auto;
+  float:left;
+  margin-top:20px
+}
+.c-menu{
+  float: right;
+  margin-top: 60px;
+}
+.c-menu li{
+  display: inline-block;
+  list-style: none;
+  margin-left: 20px
+}
+.c-menu li a{
+  padding: 5px 0;
+  color:#fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  font-weight: 100;
+}
+.c-menu li a:hover{
+  border-bottom: 2px solid #fff;
+}
+.column{
+	float: left;
+	width: 50%;
+	margin: 0px 0px;
+}
+.gallery::after
+{
+	content: "";
+	clear: both;
+	display: table;
+}
+</style>
+<body>
+	<header>
+	  	<nav>
+	      <div class="mainbody clearfix">
+	        <img src="images/image.jpg" class="logo">
+	        <ul class="c-menu" id="id-menu">
+	          <li><a href="login.html">Order Now</a></li>
+	          <li><a href="index.html">Home</a></li>
+	          <li><a href="gallery.html">Gallery</a></li>
+	          <li><a href="story.html">Story</a></li>
+	          <li><a href="visit.html">Visit</a></li>
+	        </ul>
+	      </div>
+	    </nav>
+	</header>
+	<div class="gallery">
+	<div class="column">
+		<img src="images/fries.jpg" width="800" height="500">
+	</div>	
+	<div class="column">
+		<img src="images/backbenchers.jpg" width="674.5" height="500">
+	</div>
+	<img src="images/burger.jpg" width="100%" height="700">
+	<div class="column">
+		<img src="images/juice3.jpg" width="700" height="800">
+	</div>	
+	<div class="column">
+		<img src="images/burger2.jpg" width="674.5" height="800">
+	</div>
+	<div class="column">
+		<img src="images/fries2.jpg" width="800" height="600">
+	</div>	
+	<div class="column">
+		<img src="images/backbenchers1.jpg" width="674.5" height="600">
+	</div>
+	<img src="images/burger3.jpg" width="100%" height="800">
+	<div class="column">
+		<img src="images/food.jpg" width="800" height="600">
+	</div>	
+	<div class="column">
+		<img src="images/juice.jpg" width="674.5" height="600">
+	</div>
+	<img src="images/juice1.jpg" width="100%" height="700">
+	<div class="column">
+		<img src="images/burger1.jpg" width="700" height="600">
+	</div>	
+	<div class="column">
+		<img src="images/fries1.jpg" width="674.5" height="600">
+	</div>
+	</div>
+</body>
+</html>

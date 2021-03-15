@@ -24,7 +24,7 @@ include("admin/config.php");
 		}
 
 		.card {
-			width: 450px;
+			width: 350px;
 			height: 400px;
 			padding: 0 13px 18px 0;
 		}

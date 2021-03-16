@@ -127,7 +127,7 @@ include("admin/config.php");
 				echo
 				'
 			<div class="card">
-			<img src="data:image/jpeg;base64,' . base64_encode($rows['image']) . '" class = "res-image"/>	
+			<img src="'. $rows['image'].'" class = "res-image"/>	
 			<div class="res-details">			
 				<div class="res-name">' . $rows['Name'] . '</div>
 				<div class="rating-value">Rs.' . $rows['Price'] . '</div>

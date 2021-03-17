@@ -69,12 +69,20 @@ include("admin/config.php");
 		.res-location {
 			color: rgb(79, 79, 79);
 		}
+		.res-des{
+			font-size: 15px;
 
+		}
 		.res-details div {
 			padding-bottom: 3px;
 		}
+		.veg-indian-vegetarian:before {
+    margin-right: 10px;
+		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="./css/food_item.css">
+	<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css" />
+	
 </head>
 
 <body>
@@ -110,13 +118,15 @@ include("admin/config.php");
 
 				echo
 				'
-	<div class="card">
-		<img src="data:image/jpeg;base64,' . base64_encode($rows['image']) . '" class = "res-image"/>	
-		<div class="res-details">			
-			<div class="res-name">' . $rows['Name'] . '</div>
-			<div class="rating-value">Rs.' . $rows['Price'] . '</div>
-    	</div>
-	</div>
+				<div class="card">
+				<img src="'. $rows['image'].'" class = "res-image"/>	
+				<div class="res-details">			
+					<div class="res-name"><span class="veg-indian-vegetarian"></span>' . $rows['Name'] . '</div>
+					<div class="rating-value">Rs.' . $rows['Price'] . '</div>
+					<div class="res-des">' . $rows['description'] . '</div>
+					
+				</div>
+			</div>
 					';
 			}
 		} else {
@@ -129,8 +139,10 @@ include("admin/config.php");
 			<div class="card">
 			<img src="'. $rows['image'].'" class = "res-image"/>	
 			<div class="res-details">			
-				<div class="res-name">' . $rows['Name'] . '</div>
+				<div class="res-name"><span class="veg-indian-vegetarian"></span>' . $rows['Name'] . '</div>
 				<div class="rating-value">Rs.' . $rows['Price'] . '</div>
+				<div class="res-des">' . $rows['description'] . '</div>
+				
 			</div>
 		</div>
 					';

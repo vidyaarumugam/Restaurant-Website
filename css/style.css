@@ -1,94 +1,112 @@
-*{
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
-body{
-	font-size: 20px;
-	overflow-x: hidden;
-	color: #fff;
+
+
+/* 
+body {
+    font-size: 20px;
+    overflow-x: hidden;
+    color: #fff;
+} */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/macron.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
 }
-header{
-	background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('../images/image1.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 100vh;
-	overflow: hidden;
+
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0px;
+    clear: both;
 }
-.clearfix:after{
-	content: ".";
-	visibility: hidden;
-	display: block;
-	height: 0px;
-	clear: both;
+
+.mainbody {
+    max-width: 1180px;
+    margin: 0 auto;
 }
-.mainbody{
-	max-width:1180px;
-	margin:0 auto;
+
+.logo {
+    height: 70px;
+    width: auto;
+    float: left;
+    margin-top: 20px
 }
-.logo{
-	height:70px;
-	width:auto;
-	float:left;
-	margin-top:20px
+
+
+/* .c-menu {
+    float: right;
+    margin-top: 60px;
 }
-.c-menu{
-	float: right;
-	margin-top: 60px;
+
+.c-menu li {
+    display: inline-block;
+    list-style: none;
+    margin-left: 20px
 }
-.c-menu li{
-	display: inline-block;
-	list-style: none;
-	margin-left: 20px
+
+.c-menu li a {
+    padding: 5px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    font-weight: 100;
 }
-.c-menu li a{
-	padding: 5px 0;
-	color:#fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 90%;
-	font-weight: 100;
+
+.c-menu li a:hover {
+    border-bottom: 2px solid #fff;
+} */
+
+.center-body {
+    width: 500px;
+    position: absolute;
+    top: 35%;
+    left: 55%;
 }
-.c-menu li a:hover{
-	border-bottom: 2px solid #fff;
+
+.address {
+    transform: translate(-50%);
 }
-.center-body{
-	width: 500px;
-	position: absolute;
-	top: 35%;
-	left: 55%;	
+
+p {
+    color: #fff;
+    font-size: 70%
 }
-.address{
-	transform: translate(-50%);
+
+.button {
+    width: 1000px;
+    top: 40%;
+    left: 25%;
+    transform: translate(-40%);
+    margin-top: 20px;
 }
-p{
-	color: #fff;
-	font-size: 70%
-	
+
+.button li {
+    display: inline-block;
+    list-style: none;
 }
-.button{
-	width: 1000px;
-	top: 40%;
-	left: 25%;
-	transform: translate(-40%);
-	margin-top: 20px;
+
+.button li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 300%;
+    margin-left: 30px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
 }
-.button li{
-	display: inline-block;
-	list-style: none;
-}
-.button li a{
-	display:block;
-	color:#fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 300%;
-	margin-left: 30px;	
-	cursor: pointer;
-	text-align: center;
-	line-height: 50px;
-}
-.button li a:hover{
-	border-bottom: 2px solid #fff;
+
+.button li a:hover {
+    border-bottom: 2px solid #fff;
 }

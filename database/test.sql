@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2021 at 02:00 PM
+-- Generation Time: Mar 17, 2021 at 03:34 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -59,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `tbl_images` (
 `id` int(11) NOT NULL,
   `image` varchar(200) NOT NULL,
   `Name` varchar(255) NOT NULL,
+  `description` varchar(200) NOT NULL,
   `Price` int(255) NOT NULL,
   `Type` varchar(255) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
@@ -67,47 +68,47 @@ CREATE TABLE IF NOT EXISTS `tbl_images` (
 -- Dumping data for table `tbl_images`
 --
 
-INSERT INTO `tbl_images` (`id`, `image`, `Name`, `Price`, `Type`) VALUES
-(1, 'images\\burger.jpg', 'Aloo Tikki', 45, 'burger'),
-(20, 'images\\maggi3.jpg', 'Cheesy Maggi', 80, 'maggi'),
-(21, 'images\\wraps3.jpg', 'Veg Cut Rolls', 70, 'wrap'),
-(22, 'images\\sandwich5.jpg', 'Spinach Corn', 80, 'sandwich'),
-(7, 'images\\mouse.jpg', 'Classic chocolate mousse', 80, 'dessert'),
-(15, 'images\\fries4.jpg', 'Magic Masala Fries', 89, 'fries'),
-(16, 'images\\pasta4.jpg', 'Vodka Rose Wagon Wheel Pasta', 200, 'pasta'),
-(17, 'images\\fries2.jpg', 'Peri Peri Fries', 89, 'fries'),
-(18, 'images\\sandwich4.jpg', 'Cheesy Sandwich', 75, 'sandwich'),
-(19, 'images\\burger4.jpg', 'Spicy Paneer', 79, 'burger'),
-(6, 'images\\maggi1.jpg', 'Plain Maggi', 45, 'maggi'),
-(3, 'images\\pasta1.jpg', 'Magic Pasta', 60, 'pasta'),
-(4, 'images\\sandwich1.jpg', 'Vegetable Sandwich', 45, 'sandwich'),
-(8, 'images\\maggi2.jpg', 'Vegetable Paneer Maggi', 100, 'maggi'),
-(34, 'images\\kajukatli.jpg', 'Kaju Katli', 50, 'sweet'),
-(37, 'images/motichoor.jpg', 'Motichoor laddoo', 60, 'sweet'),
-(5, 'images\\panipuri.jpg', 'Pani Puri', 50, 'pani puri'),
-(10, 'images\\pasta2.jpg', 'White Sauce Cheese Pasta', 80, 'pasta'),
-(11, 'images\\wraps2.jpg', 'Veg Schezwan Wraps', 60, 'wrap'),
-(12, 'images\\sandwich2.jpg', 'Vegetable Sandwich Grilled', 50, 'sandwich'),
-(13, 'images\\burger3.jpg', 'Aloo Corn Fusion', 59, 'burger'),
-(2, 'images\\fries.jpg', 'Salted Fries', 45, 'fries'),
-(23, 'images\\burger5.jpg', 'Chilli Garlic', 89, 'burger'),
-(24, 'images\\pasta5.jpg', 'Alfredo Pasta', 200, 'pasta'),
-(25, 'images\\fries6.jpg', 'Barbeque Fries', 99, 'fries'),
-(29, 'images\\pizza1.jpg', 'Cheese Pizza', 200, 'pizza'),
-(32, 'images\\pizza2.jpg', 'Veggiemania Pizza', 300, 'pizza'),
-(27, 'images\\sandwich6.jpg', 'Cheese Masala Sandwich', 70, 'sandwich'),
-(28, 'images\\burger6.jpg', 'Toppers Burger', 89, 'burger'),
-(33, 'images\\pizza3.jpg', 'Pepperoni pizza', 250, 'pizza'),
-(30, 'images\\fries5.jpg', 'Jalapeno Fries', 99, 'fries'),
-(31, 'images\\sandwich7.jpg', 'Chocolate Sandwich', 100, 'sandwich'),
-(9, 'images\\macron.jpg', 'Macaron', 50, 'dessert'),
-(14, 'images\\truffles.jpg', 'Oreo Truffles', 50, 'dessert'),
-(26, 'images\\peanut.jpg', 'Peanut Butter Dessert', 80, 'dessert'),
-(35, 'images\\sandwich8.jpg', 'Cheese Chilli', 150, 'sandwich'),
-(36, 'images\\fries1.jpg', 'Cheesy Fries', 99, 'fries'),
-(38, 'images\\fries3.jpg', 'Masala Barbeque Fries', 109, 'fries'),
-(39, 'images\\wraps1.jpg', 'Tandoori Paneer Wraps', 110, 'wrap'),
-(40, 'images\\juice.jpg', 'Strawberry Juice', 50, 'juice');
+INSERT INTO `tbl_images` (`id`, `image`, `Name`, `description`, `Price`, `Type`) VALUES
+(1, 'images\\burger.jpg', 'Aloo Tikki', 'Mashed potatoes, spice powders and other basic ingredients.', 90, 'burger'),
+(20, 'images\\maggi3.jpg', 'Cheesy Maggi', 'Maggi with cheese overloaded and chilli flakes.', 80, 'maggi'),
+(21, 'images\\wraps3.jpg', 'Veg Cut Rolls', 'Finest chickpeas, vegetables, topped with classic mayo and crunchy onions wrapped.', 70, 'wrap'),
+(22, 'images\\sandwich5.jpg', 'Palak Corn Grilled Sandwich', 'Super soft bread comes with melting cheese combine with spinach(Palak)-corn-Masala herbs.', 174, 'sandwich'),
+(7, 'images\\mouse.jpg', 'Classic chocolate mousse', 'Heavy cream, sugar, vanilla extract, chocolate and sea salt.', 120, 'dessert'),
+(15, 'images\\fries4.jpg', 'Magic Masala Fries', 'Fresh Fries tossed with Magic Masala, fried Maggi, cheese, mayo, topped with chilli garlic.', 140, 'fries'),
+(16, 'images\\pasta4.jpg', 'Vodka Rose Wagon Wheel Pasta', 'Wheel pasta in parmesan cheese, onion, chilli, tomato sauce, cream and vodka.', 200, 'pasta'),
+(17, 'images\\fries2.jpg', 'Peri Peri Fries', 'Mixed with Peri Peri Masala, Jalapeno Cheese Sauce on top.', 150, 'fries'),
+(18, 'images\\sandwich4.jpg', 'Cheesy Sandwich', 'Bread stuffed with tons of fresh veggies, favoured green chutney, tons of cheese and special herbs.', 105, 'sandwich'),
+(19, 'images\\burger4.jpg', 'Spicy Paneer Burger', 'Rich and filling cottage cheese patty coated in spicy, crispy batter topped with a creamy sauce and shredded lettuce.', 150, 'burger'),
+(6, 'images\\maggi1.jpg', 'Plain Maggi', 'Maggi cooked in desi misal style.', 60, 'maggi'),
+(3, 'images\\pasta1.jpg', 'Magic Pasta', 'Penne pasta in tomato sauce with vegetables, seasoned with parsley, chilli flakes & emilgrana', 100, 'pasta'),
+(4, 'images\\sandwich1.jpg', 'Vegetable Sandwich', 'Traditional sandwich comes with burger bread stuffed with fresh vegetables, green chutney and herbs.', 89, 'sandwich'),
+(8, 'images\\maggi2.jpg', 'Vegetable Paneer Maggi', 'Paneer style maggi cooked with Indian Spices.', 100, 'maggi'),
+(34, 'images\\kajukatli.jpg', 'Kaju Katli', 'Rose water, white sugar, raw cashews, coconut oil.', 50, 'sweet'),
+(37, 'images/motichoor.jpg', 'Motichoor ladoo', 'Gram flour, baking soda, food color, white sugar. ', 60, 'sweet'),
+(5, 'images\\panipuri.jpg', 'Pani Puri', 'Special sindhi puri, boondi, pani puri ka pani (theeka), sweet chutney.', 144, 'pani puri'),
+(10, 'images\\pasta2.jpg', 'White Sauce Cheese Pasta', 'Penne pasta in creamy white sauce with vegetables, seasoned with parsley, chilli flakes & emilgrana.', 150, 'pasta'),
+(11, 'images\\wraps2.jpg', 'Veg Schezwan Wraps', 'Mushroom, Corn, swimming in molten cheese, wrapped in a whole-wheat base with schezwan sauce.', 60, 'wrap'),
+(12, 'images\\sandwich2.jpg', 'Vegetable Sandwich Grilled', 'Sandwich is full of fresh vegetables, green chutney, herbs and Amul butter.', 100, 'sandwich'),
+(13, 'images\\burger3.jpg', 'Aloo Corn Fusion', 'Mayo sauce over a lettuce bed with a crisp paneer patty and cheese slice stuffed.', 114, 'burger'),
+(2, 'images\\fries.jpg', 'Salted Fries', 'Fries with salt seasoning.', 60, 'fries'),
+(23, 'images\\burger5.jpg', 'Chilli Garlic', 'Barbeque spiced paneer topped with garlic aioli, served in a sesame brioche bun.', 150, 'burger'),
+(24, 'images\\pasta5.jpg', 'Alfredo Pasta', 'Cream based sauce with garlic, parmesan cheese.', 200, 'pasta'),
+(25, 'images\\fries6.jpg', 'Barbeque Fries', 'Fresh Fries with sweet, smokey BBQ and jalapeno cheese.', 130, 'fries'),
+(29, 'images\\pizza1.jpg', 'Cheese Pizza', 'Combo of Tender Paneer Tikkas, Crunchy Bell Peppers, Black Olives, Onion and Mozzarella Cheese overloaded.', 500, 'pizza'),
+(32, 'images\\pizza2.jpg', 'Veggiemania Pizza', 'Mushroom, Black Olive, Spicy Jalapeno, Golden Corn, Capsicum, Onion, Tomato.', 450, 'pizza'),
+(27, 'images\\sandwich6.jpg', 'Cheese Masala Sandwich', 'Masaledar grill soft bread sandwich with a masala of potatoes, spicy herbs, green chutney and cheese all over the sandwich.', 164, 'sandwich'),
+(28, 'images\\burger6.jpg', 'Toppers Burger', 'A delectable patty filled with potatoes, peas, carrots & tasty Indian spices. Topped with crispy lettuce and packed into toasted sesame buns.', 105, 'burger'),
+(33, 'images\\pizza3.jpg', 'Peri Peri Paneer pizza', 'Peri Peri Paneer, Paneer Tikka, Spicy Jalapeno, Onion, Tomato.', 250, 'pizza'),
+(30, 'images\\fries5.jpg', 'Jalapeno Fries', 'Jalapeno cheese poppers served with cheese and chilli.', 99, 'fries'),
+(31, 'images\\sandwich7.jpg', 'Chocolate Sandwich', 'Yummy! chocolate lover - the boast up taste of chocolate and Amul butter in grill bread.', 135, 'sandwich'),
+(9, 'images\\macron.jpg', 'Macaron', 'Pink macarons delicately infused with rose flavour.', 50, 'dessert'),
+(14, 'images\\truffles.jpg', 'Oreo Truffles', 'Cream cheese, white chocolate, dark chocolate, oreo biscuits.', 50, 'dessert'),
+(26, 'images\\peanut.jpg', 'Peanut Butter Dessert', 'Peanut butter, cream cheese, fudge, brown sugar with roasted crunchy nuts.', 80, 'dessert'),
+(35, 'images\\sandwich8.jpg', 'Cheese Chilli Grilled Sandwich', 'Stuffed with fresh capsicum, green chutney, onion and special herbs. Grated with cheese in and on the grilled bread.', 179, 'sandwich'),
+(36, 'images\\fries1.jpg', 'Cheesy Fries', 'Salted French Fries, Cheese Jalapeno Sauce.', 99, 'fries'),
+(38, 'images\\fries3.jpg', 'Masala Barbeque Fries', 'Salted French Fries, Bbq Sauce, Cheese Jalapeno Sauce.', 150, 'fries'),
+(39, 'images\\wraps1.jpg', 'Tandoori Paneer Wraps', 'A perfect blend of soft masala paneer tikka and chatpate chole drizzled in flavorful mayonnaise and wrapped in flaky laccha paratha.', 110, 'wrap'),
+(40, 'images\\juice.jpg', 'Strawberry Juice', 'Strawberry juice prepared with ripe and sweet strawberry and lime juice.', 50, 'juice');
 
 --
 -- Indexes for dumped tables

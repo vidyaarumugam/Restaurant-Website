@@ -10,24 +10,28 @@ include("header1.html");
         <link rel="stylesheet" type="text/css" href="css/style.css">
 
     </head>
+<style>
+
+    
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/macron.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 20px;
+    overflow-x: hidden;
+    color: #000;
+    align-items: center;
+}
+</style>
 
     <body>
-        <!-- <header> -->
-            <!-- <nav>
-                <div class="mainbody clearfix">
-                    <img src="images/image.jpg" class="logo">
-                    <ul class="c-menu" id="id-menu">
-                        <li><a href="login.html">Order Now</a></li>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="story.html">Story</a></li>
-                        <li><a href="visit.html">Visit</a></li>
-                    </ul>
-                </div>
-            </nav> -->
+      
             <div class="center-body">
                 <div class="address">
-                    <p>123 Fake Street — Seattle, WA — 206-555-7890</p>
+                    <p>25 Fake Street — New York, NY — 10003</p>
                 </div>
                 <div class="button">
                     <li>

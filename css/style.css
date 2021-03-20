@@ -12,14 +12,15 @@ body {
     color: #fff;
 } */
 
-header {
+
+/* header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/macron.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
     overflow: hidden;
-}
+} */
 
 .clearfix:after {
     content: ".";
@@ -30,7 +31,7 @@ header {
 }
 
 .mainbody {
-    max-width: 1180px;
+    max-width: 100%;
     margin: 0 auto;
 }
 

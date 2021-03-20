@@ -1,14 +1,12 @@
 <?php
 include("admin/config.php");
+include("header2.html");
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<style>
-	body {
-		font-family: Okra,Helvetica,sans-serif;
-	}
 		.img {
 			padding: 10px;
 			width: 450px;
@@ -38,7 +36,7 @@ include("admin/config.php");
 			will-change: transform, opacity;
 			object-fit: cover;
 			transition: opacity 0.25s ease 0s, transform 0.25s ease 0s;
-			
+
 
 		}
 
@@ -69,44 +67,43 @@ include("admin/config.php");
 		.res-location {
 			color: rgb(79, 79, 79);
 		}
-		.res-des{
+
+		.res-des {
 			font-size: 15px;
 
 		}
+
 		.res-details div {
 			padding-bottom: 3px;
 		}
+
 		.veg-indian-vegetarian:before {
-    margin-right: 10px;
+			margin-right: 10px;
 		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="./css/food_item.css">
 	<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css" />
-	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
-	<header>
-		<nav>
-			<div class="mainbody clearfix">
-				<img src="images/image.jpg" class="logo">
-				<ul class="c-menu" id="id-menu">
-					<li><a href="login.html">Order Now</a></li>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="gallery.html">Gallery</a></li>
-					<li><a href="story.html">Story</a></li>
-					<li><a href="visit.html">Visit</a></li>
-				</ul>
-			</div>
-		</nav>
+	<div class="overlay"></div>
+
+	<br>
+	<div class="header-container">
+		<h3 style="margin-left: 70px;"><em>The easiest way to get your favourite food</em></h3>
 		<div class="box">
 			<form method="POST">
-				<input type="text" name="tosearch" placeholder="Type....">
-				<button type="submit" name="search" value="submit">Submit</button>
+				<div class="search-container">
+					<input type="text" name="tosearch" placeholder="Type....">
+					<button type="submit" name="search" value="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</div>
 			</form>
 		</div>
-	</header><br>
-	<h3 align="center"><em>The easiest way to get your favourite food</em></h3><br>
+	</div>
+
+	<br>
 	<div class="card-container">
 
 		<?php
@@ -119,7 +116,7 @@ include("admin/config.php");
 				echo
 				'
 				<div class="card">
-				<img src="'. $rows['image'].'" class = "res-image"/>	
+				<img src="' . $rows['image'] . '" class = "res-image"/>	
 				<div class="res-details">			
 					<div class="res-name"><span class="veg-indian-vegetarian"></span>' . $rows['Name'] . '</div>
 					<div class="rating-value">Rs.' . $rows['Price'] . '</div>
@@ -137,7 +134,7 @@ include("admin/config.php");
 				echo
 				'
 			<div class="card">
-			<img src="'. $rows['image'].'" class = "res-image"/>	
+			<img src="' . $rows['image'] . '" class = "res-image"/>	
 			<div class="res-details">			
 				<div class="res-name"><span class="veg-indian-vegetarian"></span>' . $rows['Name'] . '</div>
 				<div class="rating-value">Rs.' . $rows['Price'] . '</div>

@@ -102,3 +102,34 @@ button[type="submit"]:hover {
     display: table;
     clear: both;
 }
+
+h2 {
+    font-weight: bold;
+    font-size: 44px;
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fff;
+}
+
+.cBmpNp {
+    display: inline-flex;
+    align-self: flex-end;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 1.8rem;
+    border: 1px solid rgb(181, 181, 181);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    background: rgb(255, 255, 255);
+}
+
+.container {
+    flex-direction: row;
+    display: flex;
+}

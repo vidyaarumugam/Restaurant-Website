@@ -35,13 +35,13 @@ body {
                 </div>
                 <div class="button">
                     <li>
-                        <a href='eat.html'>EAT</a>
+                        <a href='eat.php'>EAT</a>
                     </li>
                     <li>
-                        <a href='drink.html'>DRINK</a>
+                        <a href='drink.php'>DRINK</a>
                     </li>
                     <li>
-                        <a href='visit.html'>VISIT</a>
+                        <a href='visit.php'>VISIT</a>
                     </li>
                 </div>
             </div>

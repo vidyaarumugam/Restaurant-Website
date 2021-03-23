@@ -1,5 +1,12 @@
 ﻿<?php
-include("header1.html");
+session_start();
+// $username = $_SESSION['username'];
+$username  = "admin";
+if($username == "admin")
+{
+    include("header.html");
+}
+
 ?>
 
     <!DOCTYPE html>
@@ -25,10 +32,10 @@ body {
     color: #000;
     align-items: center;
 }
+
 </style>
 
     <body>
-      
             <div class="center-body">
                 <div class="address">
                     <p>25 Fake Street — New York, NY — 10003</p>
@@ -45,9 +52,11 @@ body {
                     </li>
                 </div>
             </div>
-
         <!-- </header> -->
 
     </body>
 
     </html>
+    <?php
+    // include("footer.html");
+    ?>

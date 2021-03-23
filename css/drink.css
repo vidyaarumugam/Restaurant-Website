@@ -79,10 +79,6 @@ body {
     align-self: flex-end;
 }
 
-.second-level {
-    align-self: flex-start;
-}
-
 .dots {
     border-bottom: dotted;
     z-index: -1;

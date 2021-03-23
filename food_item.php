@@ -1,5 +1,5 @@
 <?php
-include("admin/config.php");
+include("config.php");
 include("header2.html");
 ?>
 <!DOCTYPE html>

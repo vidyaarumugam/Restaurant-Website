@@ -64,7 +64,9 @@ include("header2.html");
             </div>
         </div>
     </div>
-
+    <?php
+include("footer.html");
+?>
 </body>
 
 </html>

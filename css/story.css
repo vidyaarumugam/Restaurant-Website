@@ -56,6 +56,10 @@ h2 {
     color: #fff;
 }
 
+.column h3 {
+    color: black;
+}
+
 .team-links {
     max-width: 800px;
     position: relative;

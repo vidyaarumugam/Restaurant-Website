@@ -47,7 +47,7 @@ body {
     clear: both;
 } */
 
-.row {
+.row1 {
     display: grid;
     row-gap: 30px;
     column-gap: 30px;

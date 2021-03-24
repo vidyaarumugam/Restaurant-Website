@@ -16,6 +16,79 @@ body {
     align-items: center;
 }
 
+.img {
+    padding: 10px;
+    width: 450px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 350px;
+    height: 400px;
+    padding: 0 13px 18px 0;
+}
+
+.res-image {
+    height: 60%;
+    width: 100%;
+    border-radius: 5px;
+    transform: none;
+    opacity: 1;
+    will-change: transform, opacity;
+    object-fit: cover;
+    transition: opacity 0.25s ease 0s, transform 0.25s ease 0s;
+}
+
+.res-details {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.res-name {
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-flex;
+    flex-grow: 1;
+}
+
+.res-rating {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.res-rating>.material-icons {
+    font-size: 22px;
+    margin-right: 6px;
+}
+
+.rating-value,
+.res-cuisines,
+.res-location {
+    color: rgb(79, 79, 79);
+}
+
+.res-des {
+    font-size: 15px;
+}
+
+.res-details div {
+    padding-bottom: 3px;
+}
+
+.veg-indian-vegetarian:before {
+    margin-right: 10px;
+}
+
 
 /* .box {
     position: absolute;
@@ -92,15 +165,9 @@ button[type="submit"]:hover {
     margin: 0 auto;
 }
 
-.column {
-    float: left;
-    width: 33.33%;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.card-container .fa {
+    margin-left: 5px;
+    color: green;
 }
 
 h2 {
@@ -119,7 +186,7 @@ h2 {
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
-    width: 4.5rem;
+    width: 5rem;
     height: 1.8rem;
     border: 1px solid rgb(181, 181, 181);
     border-radius: 0.6rem;
@@ -129,7 +196,8 @@ h2 {
     background: rgb(255, 255, 255);
 }
 
-.container {
+.card .container {
     flex-direction: row;
     display: flex;
+    width: 100%;
 }

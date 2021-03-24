@@ -17,7 +17,7 @@ include("header2.html")
     </div>
     <div class="main">
 
-        <div class="row">
+        <div class="row1">
             <div class="odd center">
                 <div class="first-level">
                     <div>Strawberry Juice</div>
@@ -95,7 +95,9 @@ include("header2.html")
     </div>
 
     </div>
-
+    <?php
+include("footer.html");
+?>
 </body>
 
 </html>

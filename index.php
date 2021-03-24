@@ -50,7 +50,7 @@ if ($username == "admin") {
     </div>
     
     <?php
-// include("footer.html");
+include("footer.html");
 ?>
    
 </body>

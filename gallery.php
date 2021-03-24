@@ -26,13 +26,13 @@ include("header2.html");
             margin: 0 auto;
         }
         
-       .row {
+       .row1 {
            display: flex;
            /* width: 100%; */
            align-items: center;
            height: 700px;
        }
-       .row img {
+       .row1 img {
            height: 100%;
        }
         
@@ -72,42 +72,45 @@ include("header2.html");
        </div>
        </div>       
         <div class="gallery">
-            <div class="row">
+            <div class="row1">
                 <img src="images/fries.jpg" width="800">
                 <img src="images/backbenchers.jpg" width="100%">
             </div>
-            <div class="row">
+            <div class="row1">
                 <img src="images/burger.jpg" width="100%">
             </div>
             
-            <div class="row">
+            <div class="row1">
                 <img src="images/wraps3.jpg" width="800">
                 <img src="images/pasta5.jpg" width="100%">
             </div>
-            <div class="row">
+            <div class="row1">
                 <img src="images/mouse.jpg" width="100%">
             </div>
             
-            <div class="row">
+            <div class="row1">
                 <img src="images/macron.jpg" width="800">
                 <img src="images/backbenchers1.jpg" width="100%">
             </div>
-            <div class="row">
+            <div class="row1">
             <img src="images/burger3.jpg" width="100%">
             </div>
             
-            <div class="row">
+            <div class="row1">
                 <img src="images/food.jpg" width="800">
                 <img src="images/juice.jpg" width="100%">
             </div>
-            <div class="row">
+            <div class="row1">
                 <img src="images/juice1.jpg" width="100%">  
             </div>            
-            <div class="row">
+            <div class="row1">
                 <img src="images/peanut.jpg" width="800">
                 <img src="images/pizza1.jpg" width="100%">
             </div>           
         </div>
+        <?php
+include("footer.html");
+?>
     </body>
 
     </html>

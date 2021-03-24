@@ -4,19 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/pizza2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    overflow: hidden; */
-    font-size: 20px;
-    /* overflow-x: hidden;
-    color: #000;
-    align-items: center; */
-}
-
 header {
     background-size: cover;
     background-repeat: no-repeat;

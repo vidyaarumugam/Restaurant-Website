@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("config.php");
 if(isset($_POST['username']))
 {
@@ -6,11 +7,12 @@ if(isset($_POST['username']))
 	$password=$_POST['password'];
 	if($username=="admin" and $password=="admin")
   	{
+		$_SESSION['username'] = "admin";
 		header("Location:index.php");
    	}
 	else
 	{
-		echo "<script type='text/javascript'>alert('Invalid');</script>";
+		echo "<script type='text/javascript'>alert('Invalid Username or Password');</script>";
 	}
 }
 ?>

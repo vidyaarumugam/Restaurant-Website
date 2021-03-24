@@ -4,22 +4,16 @@
     box-sizing: border-box;
 }
 
+.overlay {
+    height: 80vh;
+}
+
 
 /* 
 body {
     font-size: 20px;
     overflow-x: hidden;
     color: #fff;
-} */
-
-
-/* header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/macron.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    overflow: hidden;
 } */
 
 .clearfix:after {
@@ -31,7 +25,7 @@ body {
 }
 
 .mainbody {
-    max-width: 100%;
+    max-width: 2000px;
     margin: 0 auto;
 }
 
@@ -41,31 +35,6 @@ body {
     float: left;
     margin-top: 20px
 }
-
-
-/* .c-menu {
-    float: right;
-    margin-top: 60px;
-}
-
-.c-menu li {
-    display: inline-block;
-    list-style: none;
-    margin-left: 20px
-}
-
-.c-menu li a {
-    padding: 5px 0;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 90%;
-    font-weight: 100;
-}
-
-.c-menu li a:hover {
-    border-bottom: 2px solid #fff;
-} */
 
 .center-body {
     width: 500px;

@@ -6,6 +6,7 @@ include("header2.html");
     <head>
         <title>Gallery</title>
     </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         * {
             margin: 0px;
@@ -46,6 +47,7 @@ include("header2.html");
              /* overflow: hidden;  */
             overflow-x: hidden; 
             align-items: center;
+            font-family: 'Times New Roman', Times, serif;
         }
         .overlay {
             height: 80vh;

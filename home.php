@@ -1,5 +1,17 @@
-﻿<?php
+<?php
+session_start();
+
+$username = $_SESSION['Username'];
+
+if ($username == "admin") {
+    include("header.html");
+}
+else if(empty($username)){
     include("header1.html");
+}
+else{
+    include("header2.html");
+}
 ?>
 
 <!DOCTYPE html>

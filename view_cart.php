@@ -6,18 +6,17 @@ include("header2.html");
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="./css/view_cart.css">
+   
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/view_cart.css">
     <script>
         function testJS() {
 
-            var b = document.getElementById('name').value;
-            var data = {
-
-            }
+            var b = document.getElementById('name').getAttribute('data-foodid');
+            
             alert(b);
 
         }
@@ -36,9 +35,9 @@ include("header2.html");
             <h2>VIEW CART</h2>
         </div>
     </div>
-    <div class="main">
-        <div class="row">
-            <div class="column">
+    <div class="ofo-main">
+        <div class="ofo-row">
+            <div class="ofo-column">
                 <div class="sqs-block-content">
 
                     <div class="shipping">
@@ -60,8 +59,8 @@ include("header2.html");
   
         <form class="modal-content animate" action="/action_page.php">
   
-            <div class="container">
-                <label><b>Username</b></label>
+            <div class="ofo-container">
+                <label ><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
   
                 <label><b>Password</b></label>
@@ -71,7 +70,7 @@ include("header2.html");
 
             </div>
   
-            <div class="container">
+            <div class="ofo-container">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
         </form>

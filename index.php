@@ -1,5 +1,19 @@
 ﻿<?php
-    include("header1.html");
+session_start();
+  if(isset($_SESSION['Username']))
+  {
+      $username = $_SESSION['Username'];
+      if ($username == "admin") {
+              include("header.html");
+          }
+      else
+      {
+              include("header2.html");
+      }
+  }
+  else{
+      include("header1.html");
+  }
 ?>
 
 <!DOCTYPE html>

@@ -68,11 +68,18 @@ include ("config.php");
 .button{
      background-color: #fc8019;
 }
+.overlay {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
                 </style>
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       </head>  
       <body>  
-           <br /><br />  
+           <div class="overlay"></div>
            <div class="add">  
                 <form method="post" enctype="multipart/form-data" > 
                <h1>Add New Food Item</h1>
@@ -91,6 +98,9 @@ include ("config.php");
                 <br />  
                 <br />  
            </div>  
+           <?php
+include("footer.html");
+?>
       </body>  
  </html>  
  <script>  

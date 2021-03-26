@@ -13,12 +13,12 @@ if(isset($_REQUEST['submit']))
         if (md5($password)==$row['Password'] && $username==$row['Username']) {
 
             $_SESSION['Username'] = $row['Username'];
-            header("Location:home.php");
+            header("Location:index.php");
             
         }else if($username == "admin" && $password == "admin")
         {
             $_SESSION['Username'] = "admin";
-            header("Location:home.php");
+            header("Location:index.php");
         } 
         else {
             echo '<script>alert("Invalid Email No or Password")</script>';

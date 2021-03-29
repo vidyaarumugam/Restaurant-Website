@@ -31,10 +31,21 @@ body {
 }
 
 .ofo-main .ofo-column {
+    margin: 10px;
+    display: flex;
+    /* justify-content: flex-end; */
+    float: left;
+    width: 60%;
+    margin-left: 30px;
+    justify-content: center;
+}
+
+.ofo-main .ofo-column-shipping {
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
     justify-content: flex-end;
+    float: right;
 }
 
 .heading h2 {
@@ -53,7 +64,7 @@ button {
     outline: none;
     padding: 10px 11px;
     border: 1px #000 solid;
-    font-size: 15px;
+    font-size: 18px;
     background: #fff;
     display: block;
     margin-top: 10px;
@@ -116,6 +127,10 @@ input[type=password] {
 
 .modal .ofo-container {
     padding: 16px;
+}
+
+.ofo-row-1 {
+    margin-bottom: 15px;
 }
 
 
@@ -201,4 +216,74 @@ h4 {
     .cancelbtn {
         width: 100%;
     }
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 650px;
+    height: 150px;
+    flex-direction: row;
+}
+
+.res-image {
+    height: 85%;
+    width: 30%;
+    border-radius: 5px;
+    transform: none;
+    opacity: 1;
+    will-change: transform, opacity;
+    object-fit: cover;
+    transition: opacity 0.25s ease 0s, transform 0.25s ease 0s;
+    margin: 10px;
+}
+
+.res-details {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.res-name {
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-flex;
+    flex-grow: 1;
+}
+
+.rating-value {
+    color: rgb(79, 79, 79);
+}
+
+.veg-indian-vegetarian:before {
+    margin-right: 10px;
+}
+
+.btn {
+    width: 100px;
+    margin-left: 30px;
+}
+
+.close {
+    width: 50px;
+}
+
+.btn-primary {
+    background-color: #fc8019;
+    border-color: #fc8019;
+}
+
+.btn.btn-primary.dropdown-toggle {
+    background-color: #fc8019;
+    border-color: #fc8019;
+}
+
+.btn-primary:hover {
+    background-color: #fc8019;
+    border-color: #fc8019;
 }

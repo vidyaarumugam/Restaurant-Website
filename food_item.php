@@ -6,16 +6,47 @@ include("header2.html");
 <html>
 
 <head>
+
 	<link rel="stylesheet" type="text/css" href="./css/food_item.css">
 	<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
+	
+	var foodids = [];
 		function testJS(event) {
 
 			var b = document.getElementById('name').getAttribute('data-foodid');			
-			let foodName = event.currentTarget.parentElement.querySelector('.res-name').getAttribute('data-foodid');
-			console.log(foodName);
+			let foodid = event.currentTarget.parentElement.querySelector('.res-name').getAttribute('data-foodid');
+			foodids.push(foodid);
+		// }
+
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.open('POST', 'view_cart.php?data=' + JSON.stringify(foodid), true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+					var modal = document.getElementById("myModal");
+
+					var btn = document.getElementById("add");
+					var span = document.getElementsByClassName("close")[0];
+					btn.onclick = function() {
+					modal.style.display = "block";
+					}
+					span.onclick = function() {
+					modal.style.display = "none";
+					}
+					window.onclick = function(event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
+					}
+                }
+            }
+            xhttp.send();
 		}
 	</script>
 </head>
@@ -79,7 +110,7 @@ include("header2.html");
 			<div class="res-details">			
 				<div class="container">
 					<div id="name" data-foodid="' . $rows['id'] . '" class="res-name"><span class="veg-indian-vegetarian"></span>' . $rows['Name'] . '</div>
-					<button class="cBmpNp" onclick="testJS(event)"><span>Add</span><i class="fa fa-shopping-cart"></i></button>
+					<button class="cBmpNp" id="add" onclick="testJS(event)"><span>Add</span><i class="fa fa-shopping-cart"></i></button>
 				</div>
 				<div class="rating-value">Rs.' . $rows['Price'] . '</div>
 				<div class="res-des">' . $rows['description'] . '</div>
@@ -91,6 +122,14 @@ include("header2.html");
 		}
 		?>
 	</div>
+	<div id="myModal" class="modal">
+
+<div class="modal-content">
+  <span class="close">&times;</span>
+  <p>Added to cart.</p>
+</div>
+
+</div>
 	<?php
 	include("footer.html");
 	?>

@@ -21,7 +21,7 @@ if(isset($_REQUEST['submit']))
             header("Location:index.php");
         } 
         else {
-            echo '<script>alert("Invalid Email No or Password")</script>';
+            echo '<script>alert("Invalid Username or Password")</script>';
         }
 }
 ?>
@@ -31,6 +31,7 @@ if(isset($_REQUEST['submit']))
 <head>
 <meta charset="utf-8">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <style>    
 body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/macron.jpg');
@@ -100,6 +101,10 @@ body {
 	margin: 100px auto;
 }
 </style>
+<script>
+	var foodids = [];
+	export{foodids};
+</script>
 </head>
 <body>
 <div class="overlay">

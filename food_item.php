@@ -12,13 +12,19 @@ include("header2.html");
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
-	
-	var foodids = [];
+	// import { foodids } from 'login.php';
+	let foodids = [];
 		function testJS(event) {
 
 			var b = document.getElementById('name').getAttribute('data-foodid');			
 			let foodid = event.currentTarget.parentElement.querySelector('.res-name').getAttribute('data-foodid');
-			foodids.push(foodid);
+			if(!foodids.includes(foodid))
+			{
+				foodids.push(foodid);
+			}
+		
+
+			document.cookie = 'foodid='+foodids;
 		// }
 
 

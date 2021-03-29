@@ -287,3 +287,14 @@ h4 {
     background-color: #fc8019;
     border-color: #fc8019;
 }
+select{
+    width: 100px;
+    margin-left: 30px;
+}
+label{
+    float: left;
+    font-weight: bold;
+}
+.total{
+    font-weight: bold;
+}

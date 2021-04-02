@@ -188,8 +188,12 @@ h2 {
     width: 100%;
 }
 
-.modal {
+.hide {
     display: none;
+}
+
+.modal {
+    /* display: none; */
     /* Hidden by default */
     position: fixed;
     /* Stay in place */

@@ -12,47 +12,38 @@ include("header2.html");
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
-	// import { foodids } from 'login.php';
-	let foodids = [];
+		// import { foodids } from 'login.php';
+		let foodids = [];
+
 		function testJS(event) {
 
-			var b = document.getElementById('name').getAttribute('data-foodid');			
+			var b = document.getElementById('name').getAttribute('data-foodid');
 			let foodid = event.currentTarget.parentElement.querySelector('.res-name').getAttribute('data-foodid');
-			if(!foodids.includes(foodid))
-			{
+			if (!foodids.includes(foodid)) {
 				foodids.push(foodid);
 			}
-		
-
-			document.cookie = 'foodid='+foodids;
-		// }
 
 
-            var xhttp = new XMLHttpRequest();
-            xhttp.open('POST', 'view_cart.php?data=' + JSON.stringify(foodid), true);
-            xhttp.setRequestHeader("Content-type", "application/json");
+			document.cookie = 'foodid=' + foodids;
+			// }
 
-            xhttp.onreadystatechange = function() {
-                if (xhttp.readyState == 4 && xhttp.status == 200) {
 
-					var modal = document.getElementById("myModal");
+			var modal = document.getElementById("myModal");
 
-					var btn = document.getElementById("add");
-					var span = document.getElementsByClassName("close")[0];
-					btn.onclick = function() {
-					modal.style.display = "block";
-					}
-					span.onclick = function() {
-					modal.style.display = "none";
-					}
-					window.onclick = function(event) {
-					if (event.target == modal) {
-						modal.style.display = "none";
-					}
-					}
-                }
-            }
-            xhttp.send();
+			var btn = document.getElementById("add");
+			var span = document.getElementsByClassName("close")[0];
+			$(modal).removeClass('hide');
+			// btn.onclick = function() {
+			// 	modal.style.display = "block";
+			// }
+			span.onclick = function() {
+				$(modal).addClass('hide');
+			}
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					$(modal).removeClass('hide')
+				}
+			}
 		}
 	</script>
 </head>
@@ -128,14 +119,14 @@ include("header2.html");
 		}
 		?>
 	</div>
-	<div id="myModal" class="modal">
+	<div id="myModal" class="modal hide">
 
-<div class="modal-content">
-  <span class="close">&times;</span>
-  <p>Added to cart.</p>
-</div>
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Added to cart.</p>
+		</div>
 
-</div>
+	</div>
 	<?php
 	include("footer.html");
 	?>

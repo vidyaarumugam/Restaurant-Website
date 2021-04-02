@@ -12,10 +12,17 @@ include("header2.html");
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
-		// import { foodids } from 'login.php';
-		let foodids = [];
+
+		function getCookie(name) {
+			return document.cookie
+				.split('; ')
+				.find(row => row.startsWith(`${name}=`))
+				.split('=')[1];
+		}
 
 		function testJS(event) {
+			let cookieData = getCookie('foodid');
+			let foodids = cookieData ? cookieData.split(',') : [];
 
 			var b = document.getElementById('name').getAttribute('data-foodid');
 			let foodid = event.currentTarget.parentElement.querySelector('.res-name').getAttribute('data-foodid');

@@ -21,19 +21,33 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/view_cart.css">
     <script>
-        var modal = document.getElementById('id01');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        function placeOrder()
-        {
+        function placeOrder() {
 
 
         }
-    
+
+        function getCookie(name) {
+            return document.cookie
+                .split('; ')
+                .find(row => row.startsWith(`${name}=`))
+                .split('=')[1];
+        }
+
+        function onDelete(event) {
+            let foodid = event.currentTarget.getAttribute('data-foodid');
+            let foodids = getCookie('foodid');
+            foodids = foodids.indexOf(',') > -1 ? foodids.replace(`${foodid},`, "") : foodids.replace(`${foodid}`, "");
+            document.cookie = 'foodid=' + foodids;
+            event.currentTarget.parentElement.parentElement.remove();
+        }
+
+        function onQuantityChange(event) {
+            ratingElem = $(event.target.parentElement).find('.rating-value');
+            let total = ratingElem.attr('data-price') * event.target.value;
+            ratingElem.text(ratingElem.attr('data-price') + ' x ' + event.target.value + ' = Rs.' + total);
+            let totalElem = $('.total');
+            totalElem.text(`Total: Rs. ` + total);
+        }
     </script>
 </head>
 
@@ -58,31 +72,30 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
                             echo
                             '
 				<div class="card">
-				<img src="' . $rows['image'] . '" class = "res-image"/>	
-				<div class="res-details">	
-				<div>		
-					<div id="name" data-foodid="' . $rows['id'] . '" class="res-name"><span class="veg-indian-vegetarian"></span>' . $rows['Name'] . '</div>
-					
-					</div>
-					<div class="rating-value">Rs.' . $rows['Price'] . '</div>
-                  
-                            Quantity: 
-                        <select id="quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        </select>
-                </div> 
-                
-		
-			</div>
+                    <img src="' . $rows['image'] . '" class = "res-image"/>	
+                    <div class="res-details">	
+                    <div>		
+                        <div id="name" data-foodid="' . $rows['id'] . '" class="res-name"><span class="veg-indian-vegetarian"></span>' . $rows['Name'] . '</div>
+                        
+                        </div>
+                        <div class="rating-value" data-price=" ' . $rows['Price'] . '">Rs.' . $rows['Price'] . ' x 1 = ' . $rows['Price'] . '</div>
+                    
+                                Quantity: 
+                            <select id="quantity" onChange="onQuantityChange(event)">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            </select>
+                    </div> 
+                    <div><i data-foodid="' . $rows['id'] . '" onclick="onDelete(event)" class="fa fa-trash"></i></div>	
+			    </div>
      
 					';
                         }
@@ -99,8 +112,8 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
                             <label>Name : </label><br>
                             <input type="text" id="name" required name="name" value="<?php echo $rows["Name"] ?>">
                             <label>Address : </label><br>
-                            <textarea rows="4' type=" text" id="address" required name="address"><?php echo $rows["Address"] ?></textarea>
-                            <button onclick="document.getElementById('id01').style.display='block'" class="button" type="submit" name="insert" id="insert" value="Add Item">Place Order</button>
+                            <textarea rows="4" type="text" id="address" required name="address"><?php echo $rows["Address"] ?></textarea>
+                            <button class="button" type="submit" name="insert" id="insert" value="Add Item">Place Order</button>
 
                         </form>
                     </div>
@@ -108,28 +121,8 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
             </div>
         </div>
         <div class="ofo-row-1">
-        <div class="total">Total : Rs.<?php echo $total ?></div>
+            <div class="total">Total : Rs.<?php echo $total ?></div>
         </div>
-    </div>
-    <div id="id01" class="modal">
-
-        <form class="modal-content animate" action="">
-
-            <div class="ofo-container">
-                <h4 style="text-align:center;margin-bottom:20px;">Payment Mode</h4>
-                <input type="radio" id="cod" value="cod" name="payment">
-                <label for="cod">Cash on delivery</label><br>
-                <input type="radio" id="online" value="online" name="payment">
-                <label for="online">Online Payment</label>
-
-                <button type="submit"><b>Proceed</b></button>
-
-            </div>
-
-            <div class="ofo-container">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            </div>
-        </form>
     </div>
     <?php
     include("footer.html");

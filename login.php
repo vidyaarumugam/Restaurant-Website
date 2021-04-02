@@ -102,8 +102,7 @@ body {
 }
 </style>
 <script>
-	var foodids = [];
-	export{foodids};
+	document.cookie = "foodid=";
 </script>
 </head>
 <body>

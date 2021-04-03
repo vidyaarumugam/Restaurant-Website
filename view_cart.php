@@ -21,11 +21,7 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/view_cart.css">
     <script>
-        function placeOrder() {
-
-
-        }
-
+   
         function getCookie(name) {
             return document.cookie
                 .split('; ')
@@ -35,18 +31,24 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
 
         function onDelete(event) {
             let foodid = event.currentTarget.getAttribute('data-foodid');
+            let cardElem = event.target.parentElement.parentElement;
+            let unitPriceElem = $(cardElem).find('.unit-price');
             let foodids = getCookie('foodid');
             foodids = foodids.indexOf(',') > -1 ? foodids.replace(`${foodid},`, "") : foodids.replace(`${foodid}`, "");
             document.cookie = 'foodid=' + foodids;
-            event.currentTarget.parentElement.parentElement.remove();
+            cardElem.remove();
+            let totalElem = $('.total-value');
+            totalElem.text(totalElem.text() - unitPriceElem.text());
         }
 
         function onQuantityChange(event) {
             ratingElem = $(event.target.parentElement).find('.rating-value');
+            let unitPriceElem = $(event.target.parentElement).find('.unit-price');
             let total = ratingElem.attr('data-price') * event.target.value;
-            ratingElem.text(ratingElem.attr('data-price') + ' x ' + event.target.value + ' = Rs.' + total);
-            let totalElem = $('.total');
-            totalElem.text(`Total: Rs. ` + total);
+            ratingElem.html(ratingElem.attr('data-price') + ' x ' + event.target.value +
+                ' = Rs.<span class="unit-price">' + total + '</span>');
+            let totalElem = $('.total-value');
+            totalElem.text(totalElem.text() - unitPriceElem.text() + total);
         }
     </script>
 </head>
@@ -78,9 +80,8 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
                         <div id="name" data-foodid="' . $rows['id'] . '" class="res-name"><span class="veg-indian-vegetarian"></span>' . $rows['Name'] . '</div>
                         
                         </div>
-                        <div class="rating-value" data-price=" ' . $rows['Price'] . '">Rs.' . $rows['Price'] . ' x 1 = ' . $rows['Price'] . '</div>
-                    
-                                Quantity: 
+                        <div class="rating-value" data-price=" ' . $rows['Price'] . '">' . $rows['Price'] . ' x 1 = Rs.<span class="unit-price">' . $rows['Price'] . '</span></div>
+                            Quantity: 
                             <select id="quantity" onChange="onQuantityChange(event)">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -121,7 +122,7 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
             </div>
         </div>
         <div class="ofo-row-1">
-            <div class="total">Total : Rs.<?php echo $total ?></div>
+            <div class="total">Total : Rs.<span class="total-value"><?php echo $total ?></span></div>
         </div>
     </div>
     <?php

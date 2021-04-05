@@ -1,27 +1,33 @@
 <?php
-session_start();
+//Forgot Password Page
+//session_start();
 include("header1.html");
 include("config.php");
 if(isset($_REQUEST['submit']))
 {
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $newpassword = $_POST['new_password'];
+    $confirmpassword = $_POST['confirm_password'];
     $sql = "SELECT * FROM signup WHERE Username = '$username'";
         $result = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-        if (md5($password)==$row['Password'] && $username==$row['Username']) {
-
-            $_SESSION['Username'] = $row['Username'];
-            header("Location:index.php");
-            
-        }else if($username == "admin" && $password == "admin")
-        {
-            $_SESSION['Username'] = "admin";
-            header("Location:index.php");
-        } 
+        if (mysqli_num_rows($result)==1) {
+            if($confirmpassword==$newpassword){
+                $password=md5($confirmpassword);
+                $sql = "UPDATE signup
+                SET Password='$password'
+                WHERE Username='$username'";
+                $update = mysqli_query( $conn, $sql);
+                echo "<script>
+                    alert('Password Changed Successfully!');
+                    window.location.href='login.php';
+                    </script>";      
+            }
+            else{
+                echo '<script>alert("Password and Confirm Password is not matching")</script>';
+            } 
+        }
         else {
-            echo '<script>alert("Invalid Username or Password")</script>';
+            echo '<script>alert("Not a registered user!")</script>';
         }
 }
 ?>
@@ -31,7 +37,6 @@ if(isset($_REQUEST['submit']))
 <head>
 <meta charset="utf-8">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <style>    
 body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/macron.jpg');
@@ -101,36 +106,31 @@ body {
 	margin: 100px auto;
 }
 </style>
-<script>
-	document.cookie = "foodid=";
-</script>
 </head>
 <body>
 <div class="overlay">
     </div>
 <div class="modal-dialog modal-login">
 		<div class="modal-content">
-         <h4>Log in</h4>
+         <h4>Reset Password</h4>
 			<div class="modal-body">
-				<form action="login.php" method="post">
+				<form action="forgot_password.php" method="post">
 					<div class="form-group">
-						<input type="text" class="form-control" name="username" placeholder="Username" required="required">		
+						<input type="text" class="form-control" name="username" placeholder="Username/Email ID" required="required">		
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control" name="password" placeholder="Password" required="required">	
-					</div>        
+						<input type="password" class="form-control" name="new_password" placeholder="New Password" required="required">	
+					</div>  
+                    <div class="form-group">
+						<input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">	
+					</div>       
 					<div class="form-group">
-						<button type="submit" name="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+						<button type="submit" name="submit" class="btn btn-primary btn-lg btn-block login-btn">Submit</button>
 					</div>
 				</form>
-			</div>
-			<div class="modal-footer">
-				<a href="forgot_password.php">Forgot Password?</a>
 			</div>
 		</div>
 	</div>
     <?php
 include("footer.html");
 ?>
-</body>
-</html>

@@ -1,0 +1,128 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/feedback.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    font-size: 20px;
+    /* overflow: hidden;  */
+    overflow-x: hidden;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.overlay {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ofo-main {
+    display: grid;
+    text-align: center;
+}
+
+.ofo-main .ofo-column {
+    margin: 10px;
+    display: flex;
+    /* justify-content: flex-end; */
+    float: left;
+    width: 60%;
+    margin-left: 30px;
+    justify-content: center;
+}
+
+.ofo-main .ofo-column-shipping {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+}
+
+.heading h2 {
+    font-weight: bold;
+    font-size: 44px;
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fff;
+}
+
+.shipping input,
+textarea,
+button {
+    width: 300px;
+    outline: none;
+    padding: 10px 11px;
+    border: 1px #000 solid;
+    font-size: 18px;
+    background: #fff;
+    display: block;
+    margin-top: 10px;
+}
+
+.shipping .button {
+    background-color: #fc8019;
+}
+
+.shipping {
+    width: 400px;
+    height: 400px;
+    color: #000;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    display: inline-flex;
+}
+
+.ofo-row-1 {
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating-value {
+    color: rgb(79, 79, 79);
+}
+
+.starrr {
+    display: inline-block;
+}
+
+.starrr a {
+    font-size: 48px;
+    padding: 0 1px;
+    cursor: pointer;
+    color: #FFD119;
+    text-decoration: none;
+}
+
+.starrr a fa fa-star-o {
+    font-size: 48px;
+}
+
+a:hover {
+    color: #FFD119;
+    text-decoration: underline;
+}

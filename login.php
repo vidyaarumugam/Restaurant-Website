@@ -86,15 +86,14 @@ body {
 .modal-login .btn, .modal-login .btn:active {
 	color: #fff;
 	border-radius: 4px;
-	background: #60c7c1 !important;
+	background: #fc8019 !important;
 	text-decoration: none;
 	transition: all 0.4s;
 	line-height: normal;
 	border: none;
 }
 .modal-login .btn:hover, .modal-login .btn:focus {
-	background: #45aba6 !important;
-	outline: none;
+	opacity: 0.8;
 }
 .trigger-btn {
 	display: inline-block;

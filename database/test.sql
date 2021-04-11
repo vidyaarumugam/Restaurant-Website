@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2021 at 03:34 PM
+-- Generation Time: Apr 11, 2021 at 09:16 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -23,31 +23,56 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE IF NOT EXISTS `orders` (
+`order_id` int(11) NOT NULL,
+  `food_id` int(11) NOT NULL,
+  `quantity` int(200) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `comment` varchar(200) NOT NULL,
+  `payment` varchar(100) NOT NULL,
+  `Username` varchar(200) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `food_id`, `quantity`, `rating`, `comment`, `payment`, `Username`) VALUES
+(1, 5, 6, 3, 'fdg', 'pay_GxfvTfjsdput83', 'vidyaarumugam531@gmail.com'),
+(2, 7, 4, 3, 'fdg', 'pay_GxfvTfjsdput83', 'vidyaarumugam531@gmail.com'),
+(3, 8, 6, 3, 'fdg', 'pay_GxfvTfjsdput83', 'vidyaarumugam531@gmail.com'),
+(4, 5, 1, 3, 'fdg', 'pay_GxfxGA6l8y6tFC', 'vidyaarumugam531@gmail.com'),
+(5, 7, 1, 3, 'fdg', 'pay_GxfxGA6l8y6tFC', 'vidyaarumugam531@gmail.com'),
+(6, 1, 1, 3, 'fdg', 'pay_GxgRn1Dbr2kbsA', 'vidyaarumugam531@gmail.com');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `signup`
 --
 
 CREATE TABLE IF NOT EXISTS `signup` (
+`id` int(200) NOT NULL,
   `Username` varchar(35) NOT NULL,
   `Password` varchar(35) NOT NULL,
   `Name` varchar(35) NOT NULL,
-  `Mobile` int(35) NOT NULL,
+  `Mobile` int(200) NOT NULL,
   `Address` varchar(35) NOT NULL,
   `Gender` varchar(35) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `signup`
 --
 
-INSERT INTO `signup` (`Username`, `Password`, `Name`, `Mobile`, `Address`, `Gender`) VALUES
-('vidya@gmail.com', 'vidu', '', 0, '', ''),
-('banu@gmail.com', 'banu', 'Banu', 1234554321, 'Kalyan', 'Female'),
-('muskan@yahoo.in', 'muskan', 'Muskan', 1234567890, 'Sion', 'Female'),
-('siddhi@gmail.com', 'sid', 'siddhi', 1234567890, 'Sion', 'Female'),
-('vidya@gmail.com', 'vidu', '', 0, '', ''),
-('banu@gmail.com', 'banu', 'Banu', 1234554321, 'Kalyan', 'Female'),
-('muskan@yahoo.in', 'muskan', 'Muskan', 1234567890, 'Sion', 'Female'),
-('siddhi@gmail.com', 'sid', 'siddhi', 1234567890, 'Sion', 'Female');
+INSERT INTO `signup` (`id`, `Username`, `Password`, `Name`, `Mobile`, `Address`, `Gender`) VALUES
+(1, 'banu@gmail.com', 'banu', 'Banu', 1234554321, 'Kalyan', 'Female'),
+(2, 'muskan@yahoo.in', 'muskan', 'Muskan', 1234567890, 'Sion', 'Female'),
+(3, 'siddhi@gmail.com', 'sid', 'siddhi', 1234567890, 'Sion', 'Female'),
+(4, 'vidyaarumugam531@gmail.com', '4dc13c8aa6371cbcb715d66f351ca293', 'Vidya Arumugam', 2147483647, 'Zeus Learning, 1402 - Tower B', 'Female');
 
 -- --------------------------------------------------------
 
@@ -62,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `tbl_images` (
   `description` varchar(200) NOT NULL,
   `Price` int(255) NOT NULL,
   `Type` varchar(255) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
 
 --
 -- Dumping data for table `tbl_images`
@@ -108,11 +133,25 @@ INSERT INTO `tbl_images` (`id`, `image`, `Name`, `description`, `Price`, `Type`)
 (36, 'images\\fries1.jpg', 'Cheesy Fries', 'Salted French Fries, Cheese Jalapeno Sauce.', 99, 'fries'),
 (38, 'images\\fries3.jpg', 'Masala Barbeque Fries', 'Salted French Fries, Bbq Sauce, Cheese Jalapeno Sauce.', 150, 'fries'),
 (39, 'images\\wraps1.jpg', 'Tandoori Paneer Wraps', 'A perfect blend of soft masala paneer tikka and chatpate chole drizzled in flavorful mayonnaise and wrapped in flaky laccha paratha.', 110, 'wrap'),
-(40, 'images\\juice.jpg', 'Strawberry Juice', 'Strawberry juice prepared with ripe and sweet strawberry and lime juice.', 50, 'juice');
+(40, 'images\\juice.jpg', 'Strawberry Juice', 'Strawberry juice prepared with ripe and sweet strawberry and lime juice.', 50, 'juice'),
+(48, 'images/rose_milk.jpg', 'Rose Milk', 'Rose flavored milk prepared by mixing rose syrup with milk.', 35, 'juice'),
+(55, 'images/butter_milk.png', 'Butter Milk', 'The liquid left behind after churning butter out of cultured cream.', 35, 'juice');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+ ADD PRIMARY KEY (`order_id`);
+
+--
+-- Indexes for table `signup`
+--
+ALTER TABLE `signup`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_images`
@@ -125,10 +164,20 @@ ALTER TABLE `tbl_images`
 --
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `signup`
+--
+ALTER TABLE `signup`
+MODIFY `id` int(200) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `tbl_images`
 --
 ALTER TABLE `tbl_images`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

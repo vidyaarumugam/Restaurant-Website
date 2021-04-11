@@ -9,19 +9,27 @@ $username = $_SESSION['Username'];
 $query1 = "SELECT * FROM `signup` WHERE Username = '$username'";
 $result = mysqli_query($conn, $query1) or die(mysql_error());
 
+if (isset($_POST["submit"])) {
+    $pay = ($_REQUEST['pay']);
+    if ($pay == "p_on_d") {
+        header("location: success_order.php");
+    } else if ($pay == "p_online") {
+        header("location: pay.php");
+    }
+    header("Refresh:0");
+}
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/view_cart.css">
     <script>
-   
         function getCookie(name) {
             return document.cookie
                 .split('; ')
@@ -34,7 +42,9 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
             let cardElem = event.target.parentElement.parentElement;
             let unitPriceElem = $(cardElem).find('.unit-price');
             let foodids = getCookie('foodid');
-            foodids = foodids.indexOf(',') > -1 ? foodids.replace(`${foodid},`, "") : foodids.replace(`${foodid}`, "");
+            let foodIdsArray = foodids.split(",");
+            foodIdsArray.splice(foodIdsArray.indexOf(foodid), 1);
+            foodids = foodIdsArray.join(",");
             document.cookie = 'foodid=' + foodids;
             cardElem.remove();
             let totalElem = $('.total-value');
@@ -49,6 +59,51 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
                 ' = Rs.<span class="unit-price">' + total + '</span>');
             let totalElem = $('.total-value');
             totalElem.text(totalElem.text() - unitPriceElem.text() + total);
+        }
+
+        function onPlaceOrder() {
+            let foodNames = $('.card-container .res-name');
+            let quantites = $('.card-container #quantity');
+            let foodDetails = [];
+            foodNames.each((index, elem) => {
+                foodDetails.push({
+                    id: elem.getAttribute('data-foodid'),
+                    quantity: quantites.get(index).value
+                });
+            });
+            console.log(foodDetails);
+            let orderDetails = {
+                foodDetails,
+                total: $('.total-value').text()
+            };
+            document.cookie = 'orderDetails=' + JSON.stringify(orderDetails);
+            let total = $('.total-value').text();
+         
+            if (total == 0) {
+                alert("Cart is empty");
+            } else {
+                document.getElementById('id01').style.display = 'block';
+            }
+        }
+
+        function action() {
+           
+        }
+
+        function testJS() {
+
+            var b = document.getElementById('name').value;
+            var data = {
+
+            }
+            alert(b);
+
+        }
+        var modal = document.getElementById('id01');
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     </script>
 </head>
@@ -114,7 +169,7 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
                             <input type="text" id="name" required name="name" value="<?php echo $rows["Name"] ?>">
                             <label>Address : </label><br>
                             <textarea rows="4" type="text" id="address" required name="address"><?php echo $rows["Address"] ?></textarea>
-                            <button class="button" type="submit" name="insert" id="insert" value="Add Item">Place Order</button>
+                            <button class="button" onclick="onPlaceOrder()" type="button" name="insert" id="insert" value="Add Item">Place Order</button>
 
                         </form>
                     </div>
@@ -124,6 +179,32 @@ $result = mysqli_query($conn, $query1) or die(mysql_error());
         <div class="ofo-row-1">
             <div class="total">Total : Rs.<span class="total-value"><?php echo $total ?></span></div>
         </div>
+    </div>
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" method="POST">
+
+            <div class="container">
+                <table>
+                    <tr>
+                        <td>
+                            <h4 style="align: center;">Payment mode</h4>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;"><input type="radio" name="pay" value="p_on_d" /> Cash on delivery</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;"><input type="radio" name="pay" value="p_online" /> Online payment</td>
+                    </tr>
+                </table>
+
+
+                <button style="background-color: #fc8019; color: #000;" type="submit" name="submit">Proceed</button>
+
+            </div>
+
+
+        </form>
     </div>
     <?php
     include("footer.html");

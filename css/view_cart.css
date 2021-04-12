@@ -83,10 +83,6 @@ button {
     display: inline-flex;
 }
 
-.ofo-row-1 {
-    margin-bottom: 15px;
-}
-
 h4 {
     font-weight: bold;
 }
@@ -262,4 +258,15 @@ label {
 
 .total {
     font-weight: bold;
+}
+
+.close-btn {
+    background-color: #ffffff;
+    border: none;
+    width: 26px;
+    height: 26px;
+    color: #74716f;
+    margin-right: 20px;
+    font-size: 20px;
+    align-self: flex-end;
 }

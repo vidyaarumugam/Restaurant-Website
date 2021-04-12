@@ -185,10 +185,15 @@ if (isset($_POST["submit"])) {
         <form class="modal-content animate" method="POST">
 
             <div class="container">
+            <button class="close-btn">
+            <i class="fa fa-close"></i>
+            </button>
                 <table>
                     <tr>
                         <td>
-                            <h4 style="align: center;">Payment mode</h4>
+                            <h4>Payment mode</h4>
+                            
+                        </td>
                     </tr>
                     <tr>
                         <td style="font-size: 20px;"><input type="radio" name="pay" value="p_on_d" /> Cash on delivery</td>

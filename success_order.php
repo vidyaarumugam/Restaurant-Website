@@ -81,7 +81,7 @@
             </div>
             <div class="content">
                <h1>Ordered Successful !</h1>
-               <p>Thanks for using our website</p>
+               <p>You will receive your order soon!</p>
                <a href="feedback.php">Give Feedback</a>
             </div>
             

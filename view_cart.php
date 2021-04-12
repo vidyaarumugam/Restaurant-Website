@@ -5,14 +5,33 @@ include("header2.html");
 $id = $_COOKIE['foodid'];
 $v = explode(",", $id);
 
+$id = $_COOKIE['orderDetails'];
+$tst = json_decode($id);
+$foodDetails = $tst->foodDetails;
+
 $username = $_SESSION['Username'];
 $query1 = "SELECT * FROM `signup` WHERE Username = '$username'";
 $result = mysqli_query($conn, $query1) or die(mysql_error());
 
 if (isset($_POST["submit"])) {
+
+    // if($pay == "p_on_d")
+    // {
+
     $pay = ($_REQUEST['pay']);
     if ($pay == "p_on_d") {
-        header("location: success_order.php");
+        $pay_id = uniqid('s', false);
+        for ($i = 0; $i < count($foodDetails); $i++) {
+            $food_id = $foodDetails[$i]->id;
+            $quantity = $foodDetails[$i]->quantity;
+
+            $sql = "INSERT INTO `orders` (`food_id`, `quantity`, `payment`, `Username`,`mode`) VALUES ('$food_id','$quantity', '$pay_id', '$username', 'COD')";
+            if (mysqli_query($conn, $sql)) {
+                header("location: success_order.php");
+            } else {
+                echo "No pay";
+            }
+        }
     } else if ($pay == "p_online") {
         header("location: pay.php");
     }
@@ -78,7 +97,7 @@ if (isset($_POST["submit"])) {
             };
             document.cookie = 'orderDetails=' + JSON.stringify(orderDetails);
             let total = $('.total-value').text();
-         
+
             if (total == 0) {
                 alert("Cart is empty");
             } else {
@@ -87,7 +106,7 @@ if (isset($_POST["submit"])) {
         }
 
         function action() {
-           
+
         }
 
         function testJS() {
@@ -185,14 +204,14 @@ if (isset($_POST["submit"])) {
         <form class="modal-content animate" method="POST">
 
             <div class="container">
-            <button class="close-btn">
-            <i class="fa fa-close"></i>
-            </button>
+                <button class="close-btn">
+                    <i class="fa fa-close"></i>
+                </button>
                 <table>
                     <tr>
                         <td>
                             <h4>Payment mode</h4>
-                            
+
                         </td>
                     </tr>
                     <tr>

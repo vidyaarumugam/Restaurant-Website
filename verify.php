@@ -53,7 +53,7 @@ if ($success === true)
         print_r($food_id);
         print_r($quantity);
 
-        $sql = "INSERT INTO `orders` (food_id, quantity, payment, Username) VALUES ($food_id, $quantity, '$razorpay_payment_id', '$email')";
+        $sql = "INSERT INTO `orders` (food_id, quantity, payment, Username, mode) VALUES ($food_id, $quantity, '$razorpay_payment_id', '$email', 'Online')";
     if(mysqli_query($conn, $sql)){
         header("Location:success.php");
 

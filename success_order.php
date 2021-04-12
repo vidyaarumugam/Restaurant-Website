@@ -2,11 +2,15 @@
 <head>
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-<style type="text/css">
+<style>
 
     body
     {
-        background:#f2f2f2;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/add_food.jpg');    
+        background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden;
     }
 
     .payment
@@ -16,13 +20,11 @@
         border-radius:20px;
         background:#fff;
 	}
-   .payment_header
-   {
-	   background:#00CED1;
-	   padding:20px;
-       border-radius:20px 20px 0px 0px;
-	   
-   }
+    .payment_header {
+    background: #fc8019;
+    padding: 20px;
+    border-radius: 20px 20px 0px 0px;
+}
    
    .check
    {
@@ -59,14 +61,13 @@
         color:#fff;
         border-radius:30px;
         padding:5px 10px;
-        background:#00CED1;
+        background: #fc8019;
         transition:all ease-in-out 0.3s;
     }
 
     .content a:hover
     {
-        text-decoration:none;
-        background:#000;
+        opacity: 0.8;
     }
    
 </style>

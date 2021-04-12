@@ -23,7 +23,7 @@
 	}
    .payment_header
    {
-	   background:#00CED1;
+	   background:#fc8019;
 	   padding:20px;
        border-radius:20px 20px 0px 0px;
 	   
@@ -64,14 +64,13 @@
         color:#fff;
         border-radius:30px;
         padding:5px 10px;
-        background:#00CED1;
+        background:#fc8019;
         transition:all ease-in-out 0.3s;
     }
 
     .content a:hover
     {
-        text-decoration:none;
-        background:#000;
+        opacity: 0.8;
     }
    
 </style>

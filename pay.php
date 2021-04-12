@@ -114,6 +114,10 @@ $json = json_encode($data);
 </body>
 <style>
 .razorpay-payment-button { display: none; }
+#header {
+    background: #528FF0;
+    color: #FFFFFF;
+}
 </style>
 
 <script type="text/javascript">

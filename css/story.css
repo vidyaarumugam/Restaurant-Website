@@ -103,3 +103,8 @@ img {
 p {
     margin: 10px;
 }
+
+#scroll {
+    background: none;
+    border: none;
+}

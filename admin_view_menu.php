@@ -6,97 +6,25 @@ include("header.html");
 <html>
 
 <head>
-	<style>
-		.img {
-			padding: 10px;
-			width: 450px;
-			height: 250px;
-			object-fit: contain;
-		}
-
-		.card-container {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-
-		.card {
-			width: 350px;
-			height: 400px;
-			padding: 0 13px 18px 0;
-		}
-
-		.res-image {
-			height: 60%;
-			width: 100%;
-			border-radius: 5px;
-			transform: none;
-			opacity: 1;
-			will-change: transform, opacity;
-			object-fit: cover;
-			transition: opacity 0.25s ease 0s, transform 0.25s ease 0s;
-
-
-		}
-
-		.res-details {
-			margin-top: 10px;
-			display: flex;
-			flex-direction: column;
-		}
-
-		.res-name {
-			font-weight: bold;
-			font-size: 18px;
-			display: inline-flex;
-			flex-grow: 1;
-		}
-
-		.res-rating {
-			font-size: 18px;
-			display: flex;
-			align-items: center;
-		}
-
-		.res-rating>.material-icons {
-			font-size: 22px;
-			margin-right: 6px;
-		}
-
-		.rating-value,
-		.res-cuisines,
-		.res-location {
-			color: rgb(79, 79, 79);
-		}
-
-		.res-des {
-			font-size: 15px;
-
-		}
-
-		.res-details div {
-			padding-bottom: 3px;
-		}
-
-		.veg-indian-vegetarian:before {
-			margin-right: 10px;
-		}
-	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/food_item.css">
+
 	<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 	<div class="overlay">
-	<div class="heading">
-           <h2>View Menu</h2>
-       </div></div>
+	<div class="heading first">
+            <button type="button" id="scroll">
+                <h2>VIEW MENU</h2>
+            </button>
+        </div>
+	</div>
 
 	<br>
 	<div class="header-container">
-		<h3 style="margin-left: 70px;"><em>The easiest way to get your favourite food</em></h3>
+		<h4 style="margin-left: 160px;"><em>The easiest way to get your favourite food</em></h4>
 		<div class="box">
 			<form method="POST">
 				<div class="search-container">
@@ -160,5 +88,12 @@ include("header.html");
 include("footer.html");
 ?>
 </body>
-
+<script>
+    $("#scroll").click(function() {
+        $('html,body').animate({
+                scrollTop: $(".header-container").offset().top
+            },
+            'slow');
+    });
+</script>
 </html>

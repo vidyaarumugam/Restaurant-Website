@@ -270,3 +270,7 @@ label {
     font-size: 20px;
     align-self: flex-end;
 }
+#scroll {
+    background: none;
+    border: none;
+}

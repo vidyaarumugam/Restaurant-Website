@@ -81,7 +81,7 @@ h2 {
     display: grid;
     row-gap: 30px;
     column-gap: 30px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     padding: 0 30px;
     font-family: raleway, sans-serif;
@@ -99,4 +99,8 @@ h2 {
 .name {
     text-align: left;
     white-space: nowrap;
+}
+#scroll {
+    background: none;
+    border: none;
 }

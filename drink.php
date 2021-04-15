@@ -20,14 +20,18 @@ else{
 
 <head>
     <title>Drink</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/drink.css">
 </head>
 
 <body>
     <div class="overlay">
-        <div class="heading">
-            <h2>Drinks</h2>
+    <div class="heading first">
+            <button type="button" id="scroll">
+                <h2>Drinks</h2>
+            </button>
         </div>
+
     </div>
     <div class="main">
 
@@ -114,4 +118,12 @@ include("footer.html");
 ?>
 </body>
 
+<script>
+    $("#scroll").click(function() {
+        $('html,body').animate({
+                scrollTop: $(".main").offset().top
+            },
+            'slow');
+    });
+</script>
 </html>

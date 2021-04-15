@@ -1,13 +1,14 @@
 <?php
- include 'config.php';
- session_start();
+session_start();
+include 'config.php';
+include 'configpay.php';
+include 'razorpay-php/Razorpay.php';
+require('razorpay-php/Razorpay.php');
+use Razorpay\Api\Api;
+
 $comment = $_POST["comment"];
 $ratings = $_POST["ratings"];
- $username=$_SESSION['Username'];
-// $username="pqr@gmail.com";
- 
-mysqli_query($conn, "UPDATE orders SET rating='".$ratings."',comment='".$comment."' WHERE  Username='".$username."'");
- 
-
+$payment_id = $_SESSION['payment'];
+mysqli_query($conn, "UPDATE orders SET rating='".$ratings."',comment='".$comment."' WHERE  payment='".$payment_id."'");
 echo "Thank you for your feedback";
 ?>

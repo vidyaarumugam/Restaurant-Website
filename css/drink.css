@@ -111,3 +111,7 @@ h4 {
     display: inline;
     background: #fff;
 }
+#scroll {
+    background: none;
+    border: none;
+}

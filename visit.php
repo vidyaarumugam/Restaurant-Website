@@ -17,13 +17,16 @@ if (isset($_SESSION['Username'])) {
 
 <head>
     <title>Visit</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/visit.css">
 </head>
 
 <body>
     <div class="overlay">
-        <div class="heading">
-            <h2>GET IN TOUCH</h2>
+    <div class="heading first">
+            <button type="button" id="scroll">
+                <h2>GET IN TOUCH</h2>
+            </button>
         </div>
     </div>
     <div class="main">
@@ -57,4 +60,12 @@ if (isset($_SESSION['Username'])) {
     ?>
 </body>
 
+<script>
+    $("#scroll").click(function() {
+        $('html,body').animate({
+                scrollTop: $(".main").offset().top
+            },
+            'slow');
+    });
+</script>
 </html>

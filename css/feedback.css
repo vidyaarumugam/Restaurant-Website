@@ -126,3 +126,7 @@ a:hover {
     color: #FFD119;
     text-decoration: underline;
 }
+#scroll {
+    background: none;
+    border: none;
+}

@@ -17,7 +17,6 @@ include("header2.html");
             <button type="button" id="scroll">
                 <h2>STORY</h2>
             </button>
-            <!-- <h2>STORY</h2> -->
         </div>
     </div>
     <div class="main">

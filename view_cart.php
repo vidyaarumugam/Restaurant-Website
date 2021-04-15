@@ -27,6 +27,7 @@ if (isset($_POST["submit"])) {
 
             $sql = "INSERT INTO `orders` (`food_id`, `quantity`, `payment`, `Username`,`mode`) VALUES ('$food_id','$quantity', '$pay_id', '$username', 'COD')";
             if (mysqli_query($conn, $sql)) {
+                $_SESSION['payment'] = $pay_id;
                 header("location: success_order.php");
             } else {
                 echo "No pay";
@@ -105,19 +106,6 @@ if (isset($_POST["submit"])) {
             }
         }
 
-        function action() {
-
-        }
-
-        function testJS() {
-
-            var b = document.getElementById('name').value;
-            var data = {
-
-            }
-            alert(b);
-
-        }
         var modal = document.getElementById('id01');
         window.onclick = function(event) {
             if (event.target == modal) {
@@ -129,8 +117,10 @@ if (isset($_POST["submit"])) {
 
 <body>
     <div class="overlay">
-        <div class="heading">
-            <h2>VIEW CART</h2>
+    <div class="heading first">
+            <button type="button" id="scroll">
+                <h2>VIEW CART</h2>
+            </button>
         </div>
     </div>
     <div class="ofo-main">
@@ -234,5 +224,13 @@ if (isset($_POST["submit"])) {
     include("footer.html");
     ?>
 </body>
+<script>
+    $("#scroll").click(function() {
+        $('html,body').animate({
+                scrollTop: $(".ofo-main").offset().top
+            },
+            'slow');
+    });
+</script>
 
 </html>

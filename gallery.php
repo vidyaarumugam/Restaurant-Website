@@ -6,6 +6,7 @@ include("header2.html");
     <head>
         <title>Gallery</title>
     </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         * {
@@ -64,15 +65,21 @@ include("header2.html");
     font-family: 'Source Sans Pro', sans-serif;
     color: #fff;
         }
+        #scroll {
+    background: none;
+    border: none;
+}
         
     </style>
 
     <body>
        <div class="overlay">
-       <div class="heading">
-           <h2>OUR GALLERY</h2>
-       </div>
-       </div>       
+       <div class="heading first">
+            <button type="button" id="scroll">
+                <h2>OUR GALLERY</h2>
+            </button>
+        </div>
+</div>       
         <div class="gallery">
             <div class="row1">
                 <img src="images/fries.jpg" width="800">
@@ -114,5 +121,13 @@ include("header2.html");
 include("footer.html");
 ?>
     </body>
+    <script>
+    $("#scroll").click(function() {
+        $('html,body').animate({
+                scrollTop: $(".gallery").offset().top
+            },
+            'slow');
+    });
+</script>
 
     </html>

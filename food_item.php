@@ -6,11 +6,11 @@ include("header2.html");
 <html>
 
 <head>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/food_item.css">
 	<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
 	<script>
 		function getCookie(name) {
 			return document.cookie
@@ -44,14 +44,16 @@ include("header2.html");
 
 <body>
 	<div class="overlay">
-		<div class="heading">
-			<h2>ORDER NOW</h2>
-		</div>
+	<div class="heading first">
+            <button type="button" id="scroll">
+                <h2>ORDER NOW</h2>
+            </button>
+        </div>
 	</div>
 
 	<br>
 	<div class="header-container">
-		<h4 style="margin-left: 70px;"><em>The easiest way to get your favourite food</em></h4>
+		<h4 style="margin-left: 160px;"><em>The easiest way to get your favourite food</em></h4>
 		<div class="box">
 			<form method="POST">
 				<div class="search-container">
@@ -119,4 +121,12 @@ include("header2.html");
 	?>
 </body>
 
+<script>
+    $("#scroll").click(function() {
+        $('html,body').animate({
+                scrollTop: $(".header-container").offset().top
+            },
+            'slow');
+    });
+</script>
 </html>

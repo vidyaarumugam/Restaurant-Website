@@ -50,11 +50,11 @@ if ($success === true)
     for($i=0;$i<count($foodDetails);$i++){
         $food_id = $foodDetails[$i]->id;
         $quantity = $foodDetails[$i]->quantity;
-        print_r($food_id);
-        print_r($quantity);
 
         $sql = "INSERT INTO `orders` (food_id, quantity, payment, Username, mode) VALUES ($food_id, $quantity, '$razorpay_payment_id', '$email', 'Online')";
     if(mysqli_query($conn, $sql)){
+        $_SESSION['payment'] = $razorpay_payment_id;
+
         header("Location:success.php");
 
     }

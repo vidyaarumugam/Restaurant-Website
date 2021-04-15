@@ -38,7 +38,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
+    height: 120vh;
     font-size: 20px;
     align-items: center;
     overflow-x: hidden;

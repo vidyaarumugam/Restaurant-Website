@@ -57,3 +57,7 @@ h2 {
     display: table;
     clear: both;
 }
+#scroll {
+    background: none;
+    border: none;
+}

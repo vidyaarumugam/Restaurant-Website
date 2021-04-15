@@ -42,6 +42,7 @@ if(isset($_REQUEST['submit']))
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <style>    
 body {
@@ -49,7 +50,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 113vh;
+    height: 120vh;
     font-size: 18px;
     overflow-x: hidden;
     align-items: center;
@@ -62,23 +63,39 @@ body {
     justify-content: center;
     align-items: center;
 }
-.modal-signup {		
-	color: #636363;
-	width: 400px;
+.form-control {
+	font-size: 15px;
 }
-.modal-signup .modal-content {
-	width: 450px;
+.form-control, .form-control:focus, .input-group-text {
+	border-color: #e1e1e1;
+}
+.form-control, .btn {        
+	border-radius: 3px;
+}
+.signup-form {
+	width: 425px;
 	margin: 0 auto;
-	padding: 30px 0;
-  	font-size: 15px;
+	padding: 30px 0;		
 }
-.modal-signup .modal-content h2 {
+.signup-form form {
+	color: #999;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+.signup-form h2 {
+	color: black;
+	margin-top: 0;
+}
+.signup-form h2 {
 	color: #636363;
 	margin: 0 0 15px;
 	position: relative;
 	text-align: center;
 }
-.modal-signup .modal-content h2:before, .modal-signup .modal-content h2:after {
+.signup-form h2:before, .signup-form  h2:after {
 	content: "";
 	height: 2px;
 	width: 30%;
@@ -86,33 +103,30 @@ body {
 	position: absolute;
 	top: 50%;
 	z-index: 2;
-}	
-.modal-signup .modal-content h2:before {
+}
+.signup-form  h2:before {
 	left: 0;
 }
-.modal-signup .modal-content h2:after {
+.signup-form  h2:after {
 	right: 0;
 }
-.modal-signup .modal-content {
-	padding: 20px;
-	border-radius: 5px;
-	border: none;
+.signup-form .form-group {
+	margin-bottom: 20px;
 }
-.modal-signup .form-control:focus {
-	border-color: #70c5c0;
+.signup-form label {
+	font-weight: normal;
+	font-size: 15px;
 }
-.modal-signup .form-control, .modal-login .btn {
-	min-height: 40px;
-	border-radius: 3px; 
-}
-.modal-signup .close {
-	position: absolute;
-	top: -5px;
-	right: -5px;
-}			
-
-.modal-signup .btn, .modal-login .btn:active {
-	color: #fff;
+.signup-form .form-control {
+	min-height: 38px;
+	box-shadow: none !important;
+}	
+.signup-form .input-group-addon {
+	max-width: 42px;
+	text-align: center;
+}	
+.signup-form .btn, .signup-form .btn:active {        
+    color: #fff;
 	border-radius: 4px;
 	background: #fc8019 !important;
 	text-decoration: none;
@@ -120,53 +134,134 @@ body {
 	line-height: normal;
 	border: none;
 }
-.modal-signup .btn:hover, .modal-signup .btn:focus {
+.signup-form .btn:hover, .signup-form .btn:focus {
 	opacity: 0.8;
 }
-.trigger-btn {
-	display: inline-block;
-	margin: 100px auto;
+.signup-form a {
+	color: #fff;	
+	text-decoration: underline;
 }
-
+.signup-form a:hover {
+	text-decoration: none;
+}
+.signup-form form a {
+	color: #19aa8d;
+	text-decoration: none;
+}	
+.signup-form form a:hover {
+	text-decoration: underline;
+}
+.signup-form .fa {
+	font-size: 21px;
+}
+.signup-form .fa-mobile {
+	font-size: 25px;
+    width: 19px;
+}
+.signup-form .fa-user {
+	font-size: 25px;
+    width: 19px;
+}
+.signup-form .fa-lock {
+	font-size: 25px;
+    width: 19px;
+}
+.signup-form .fa-address-card {
+	font-size: 20px;
+    width: 19px;
+}
+.signup-form .fa-check {
+	color: #fff;
+	left: 17px;
+	top: 18px;
+	font-size: 7px;
+	position: absolute;
+}
+.fa-transgender:before {
+    color: #495057;
+}
+b{
+	color: black;
+}
 </style>
 </head>
 <body>
 <div class="overlay">
-<div class="modal-dialog modal-signup">
-		<div class="modal-content">
-         <h2>Sign Up</h2>
-			<div class="modal-body">
-				<form action="signup.php" method="post">
-				<div class="form-group">
-						<input type="text" class="form-control" name="name" placeholder="Name" required="required">		
-					</div>
-					<div class="form-group">
-						<input type="email" class="form-control" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$" name="username" placeholder="Username/Email" required="required">		
-					</div>
-					<div class="form-group">
-						<input type="phone" class="form-control" title="Please enter valid number!" pattern="[1-9]{1}[0-9]{9}" name="mobile" placeholder="Mobile No" required="required">		
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" name="address" placeholder="Address" required="required">		
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control" name="password" placeholder="Password" required="required">	
-					</div>  
-					<div class="form-group">
-						<input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">	
-                    </div>
-					<div class="form-group">
-						Gender  
-						&nbsp;<input type="radio" name="gender" value="Male"> Male
-                    <input type="radio" name="gender" value="Female"> Female
-                    </div> 
-					<div class="form-group">
-						<button type="submit" name="submit" class="btn btn-primary btn-lg btn-block login-btn">Submit</button>
-					</div>
-				</form>
+<div class="signup-form">
+    <form action="signup.php" method="post">
+		<h2>Sign Up</h2>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-user"></span>
+					</span>                    
+				</div>
+                <input type="text" class="form-control" name="name" placeholder="Name" required="required">		
 			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-envelope"></span>
+					</span>                    
+				</div>
+                <input type="email" class="form-control" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$" name="username" placeholder="Username/Email" required="required">
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-mobile"></i>
+					</span>                    
+				</div>
+                <input type="phone" class="form-control" title="Please enter valid number!" pattern="[1-9]{1}[0-9]{9}" name="mobile" placeholder="Mobile No" required="required">
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-address-card"></i>
+					</span>                    
+				</div>
+                <input type="text" class="form-control" name="address" placeholder="Address" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-lock"></i>
+					</span>                    
+				</div>
+				<input type="password" class="form-control" name="password" placeholder="Password" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-lock"></i>
+						<i class="fa fa-check"></i>
+					</span>                    
+				</div>
+                <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+			</div>
+        </div>
+        <div class="form-group">
+		<i class="fa fa-transgender"></i>
+        <b>Gender</b>
+		&nbsp;&nbsp;<input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
 		</div>
-	</div>
+		<div class="form-group">
+        <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block login-btn">Submit</button>
+        </div>
+    </form>
+</div>
 </div>
 <?php
 include("footer.html");

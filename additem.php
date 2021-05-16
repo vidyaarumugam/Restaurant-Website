@@ -6,7 +6,7 @@ include ("config.php");
       $name = $_FILES['image']['name'];
   $target_dir = "images/";
   $target_file = $target_dir . basename($_FILES["image"]["name"]);  
-      $query = "INSERT INTO tbl_images(Name,Price,Type,image) VALUES ('" . $_REQUEST['name'] . "','" . $_REQUEST['price'] . "','" . $_REQUEST['type'] . "','$target_file')";  
+      $query = "INSERT INTO tbl_images(Name,description,Price,Type,image) VALUES ('" . $_REQUEST['name'] . "','" . $_REQUEST['desc'] . "','" . $_REQUEST['price'] . "','" . $_REQUEST['type'] . "','$target_file')";  
       if(mysqli_query($conn, $query))  
       {  
            echo '<script>alert("Image Inserted into Database")</script>';  

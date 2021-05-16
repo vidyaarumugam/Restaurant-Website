@@ -50,7 +50,7 @@ if (isset($_POST["submit"])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/view_cart.css">
     <script>
-        function getCookie(name) {
+    function getCookie(name) {
             return document.cookie
                 .split('; ')
                 .find(row => row.startsWith(`${name}=`))

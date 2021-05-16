@@ -20,10 +20,42 @@ if (isset($_SESSION['Username'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/visit.css">
 </head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+//   var work = document.getElementById("work").value;
+//   var eat = document.getElementById("eat").value;
+//   var tv = document.getElementById("tv").value;
+//   var gym = document.getElementById("gym").value;
+//   var sleep = document.getElementById("sleep").value;
+  var data = google.visualization.arrayToDataTable(
+
+    [
+  ['Reviews', 'Rating'],
+  ['Excellent', 5],
+  ['Great', 4],
+  ['Average', 3],
+  ['Poor', 2],
+  ['Bad', 1]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
 <body>
     <div class="overlay">
-    <div class="heading first">
+        <div class="heading first">
             <button type="button" id="scroll">
                 <h2>GET IN TOUCH</h2>
             </button>
@@ -51,7 +83,32 @@ if (isset($_SESSION['Username'])) {
             </div>
 
             <div class="column">
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=25%20Fake%20street,%20New%20York,%20NY%20-%2010003&t=&z=9&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://yggtorrent-fr.com"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+                <div class="mapouter">
+                    <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=New%20york-1003&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br>
+                        <style>
+                            .mapouter {
+                                position: relative;
+                                text-align: right;
+                                height: 500px;
+                                width: 600px;
+                            }
+                        </style><a href="https://www.embedgooglemap.net">google maps embed api</a>
+                        <style>
+                            .gmap_canvas {
+                                overflow: hidden;
+                                background: none !important;
+                                height: 500px;
+                                width: 600px;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            <div class="column">
+            <div id="piechart">
+            </div>
+            </div>
             </div>
         </div>
     </div>
@@ -68,4 +125,5 @@ if (isset($_SESSION['Username'])) {
             'slow');
     });
 </script>
+
 </html>

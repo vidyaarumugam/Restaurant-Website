@@ -20,6 +20,20 @@ include("header2.html");
         </div>
     </div>
     <div class="main">
+    <div class="row">
+            <div class="sqs-block">
+                <div class="sqs-block-content">
+                    <br>
+                    <p class="center"><strong><em><q id="a">Cooking with LOVE provides FOOD for the SOUL</q></em></strong><br /></p><br>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="video">
+            <video id="promo_video" width="800px" controls autoplay muted>
+                <source src="images/Promo.mp4" type="video/mp4">
+            </video>
+        </div></div>
         <div class="row">
             <div class="column">
                 <div class="sqs-block-content">
